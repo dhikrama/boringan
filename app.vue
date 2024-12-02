@@ -10,7 +10,7 @@
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const baseUrl = 'https://www.maunguli.com';
+const baseUrl = 'https://www.boringan.com';
 
 useHead({
   link: [

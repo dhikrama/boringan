@@ -1,41 +1,45 @@
 <template>
-    <section class="bg-gray-100 py-16">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">About Us</h2>
-        <p class="text-gray-600 text-lg mb-8">
-          <strong class="text-purple-600">MauNguli</strong> adalah platform yang menyediakan layanan tukang bangunan profesional untuk berbagai kebutuhan konstruksi Anda. 
-          Dengan tim yang berpengalaman dan terpercaya, kami berkomitmen untuk membantu Anda mewujudkan proyek konstruksi secara efisien dan berkualitas tinggi.
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-6 lg:px-12">
+      <!-- About Us Section -->
+      <div class="text-center mb-12">
+        <!-- Title -->
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
+          Tentang Kami
+        </h2>
+        <!-- Description -->
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+          Mitra Gali Kabel adalah perusahaan yang bergerak di bidang penggalian kabel untuk berbagai kebutuhan seperti PJU, PLN, CCTV jalan, lampu taman, dan lainnya. Kami berkomitmen untuk memberikan solusi yang aman, efisien, dan berkualitas tinggi dengan tenaga ahli berpengalaman.
         </p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
-          <div class="bg-white shadow-lg rounded-lg p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Tenaga Ahli Profesional</h3>
-            <p class="text-gray-600">
-              Kami bekerja sama dengan tukang bangunan yang berpengalaman dan memiliki keahlian di berbagai bidang konstruksi.
-            </p>
-          </div>
-          <div class="bg-white shadow-lg rounded-lg p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Fokus pada Kualitas</h3>
-            <p class="text-gray-600">
-              Setiap proyek dikerjakan dengan standar terbaik untuk memastikan kepuasan pelanggan.
-            </p>
-          </div>
-          <div class="bg-white shadow-lg rounded-lg p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Solusi Terjangkau</h3>
-            <p class="text-gray-600">
-              Kami menawarkan harga yang transparan dan kompetitif tanpa mengorbankan kualitas.
-            </p>
-          </div>
+
+        <!-- Image Section -->
+        <div class="flex justify-center mb-8">
+          <img
+            src="/images/about-us-image.webp"
+            alt="Pekerjaan Penggalian Kabel"
+            class="w-full h-auto max-w-xl rounded-xl shadow-lg transition-transform duration-300 hover:scale-105"
+          />
         </div>
-        <p class="text-lg font-medium text-gray-800">
-          <strong class="text-purple-600">Misi Kami:</strong> Membangun kepercayaan dan memberikan solusi konstruksi yang praktis, inovatif, dan dapat diandalkan untuk semua pelanggan kami.
-        </p>
+
+        <!-- Link to About Page -->
+        <router-link
+          to="/about"
+          class="inline-block bg-yellow-500 text-white px-8 py-4 rounded-lg text-xl font-semibold shadow-md transform hover:bg-yellow-600 hover:scale-105 transition-all duration-300"
+        >
+          Baca Selengkapnya
+        </router-link>
       </div>
-    </section>
-  </template>
-  
-  <script>
-  export default {
-    name: "AboutUs",
-  };
-  </script>
-  
+    </div>
+  </section>
+</template>
+
+<script setup>
+// Tidak ada logika khusus di dalam section ini
+</script>
+
+<style scoped>
+/* Custom Styling */
+.bg-white {
+  background-color: #ffffff;
+}
+</style>

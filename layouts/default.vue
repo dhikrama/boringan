@@ -15,8 +15,8 @@ useHead({
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "MauNguli",
-        "url": "https://www.maunguli.com",
-        "logo": "https://www.maunguli.com/logo.png"
+        "url": "https://www.boringan.com",
+        "logo": "https://www.boringan.com/logo.png"
       })
     }
   ]
