@@ -1,32 +1,57 @@
 <template>
   <section class="bg-white py-20">
-    <div class="container mx-auto px-6 lg:px-12">
-      <!-- About Us Section -->
-      <div class="text-center mb-12">
-        <!-- Title -->
-        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
-          Tentang Kami
-        </h2>
-        <!-- Description -->
-        <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-          Mitra Gali Kabel adalah perusahaan yang bergerak di bidang penggalian kabel untuk berbagai kebutuhan seperti PJU, PLN, CCTV jalan, lampu taman, dan lainnya. Kami berkomitmen untuk memberikan solusi yang aman, efisien, dan berkualitas tinggi dengan tenaga ahli berpengalaman.
-        </p>
-
-        <!-- Image Section -->
-        <div class="flex justify-center mb-8">
-          <img
-            src="/images/about-us-image.webp"
-            alt="Pekerjaan Penggalian Kabel"
-            class="w-full h-auto max-w-xl rounded-xl shadow-lg transition-transform duration-300 hover:scale-105"
-          />
+    <div class="container mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Gambar dan Komunitas -->
+      <div class="relative">
+        <nuxt-img
+          src="/images/about-us-example.webp"
+          alt="Happy Community"
+          class="rounded-xl shadow-lg w-full"
+        />
+        <!-- Card Komunitas -->
+        <div
+          class="absolute bottom-6 left-6 bg-white rounded-lg shadow-md p-4 flex items-center gap-4"
+        >
+          <!-- Avatar Group -->
+          <div class="flex -space-x-2">
+            <img
+              src="https://i.pravatar.cc/40?img=1"
+              alt="Member 1"
+              class="w-10 h-10 rounded-full border-2 border-white"
+            />
+            <img
+              src="https://i.pravatar.cc/40?img=2"
+              alt="Member 2"
+              class="w-10 h-10 rounded-full border-2 border-white"
+            />
+            <img
+              src="https://i.pravatar.cc/40?img=3"
+              alt="Member 3"
+              class="w-10 h-10 rounded-full border-2 border-white"
+            />
+          </div>
+          <!-- Komunitas Info -->
+          <div>
+            <p class="font-semibold text-gray-800">150+</p>
+            <p class="text-gray-500 text-sm">Join our active community</p>
+          </div>
         </div>
+      </div>
 
-        <!-- Link to About Page -->
+      <!-- Teks dan Tombol -->
+      <div>
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
+          Di Mana Solusi Kabel Anda Dimulai
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Mitra Gali Kabel adalah solusi untuk semua kebutuhan penggalian kabel Anda. Dengan pengalaman bertahun-tahun, kami menyediakan layanan berkualitas tinggi untuk penggalian kabel PJU, PLN, CCTV jalan, lampu taman, dan lainnya.
+        </p>
+        <!-- Tombol -->
         <router-link
           to="/about"
-          class="inline-block bg-yellow-500 text-white px-8 py-4 rounded-lg text-xl font-semibold shadow-md transform hover:bg-yellow-600 hover:scale-105 transition-all duration-300"
+          class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-md hover:bg-blue-700 transition-all duration-300"
         >
-          Baca Selengkapnya
+          Selengkapnya
         </router-link>
       </div>
     </div>
@@ -34,12 +59,9 @@
 </template>
 
 <script setup>
-// Tidak ada logika khusus di dalam section ini
+// Tidak ada logika khusus untuk section ini
 </script>
 
 <style scoped>
-/* Custom Styling */
-.bg-white {
-  background-color: #ffffff;
-}
+/* Custom styling */
 </style>

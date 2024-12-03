@@ -1,36 +1,81 @@
 <template>
-  <div id="services">
-  <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-gray-800 mb-6">Layanan Kami</h2>
-      <p class="text-gray-600 mb-12">
-        Layanan profesional kami mencakup berbagai jenis pekerjaan konstruksi yang dapat disesuaikan dengan kebutuhan Anda.
+  <section class="py-16 bg-gradient-to-br from-blue-900 via-blue-800 to-gray-900 text-white">
+    <div class="container mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-3xl font-bold mb-4">Layanan Kami</h2>
+      <p class="text-lg mb-12">
+        Kami menyediakan berbagai layanan penggalian kabel untuk kebutuhan Anda, meliputi PLN, PJU, CCTV, Lampu Taman, dan lainnya, dengan hasil profesional dan terpercaya.
       </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Layanan 1 -->
-        <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-          <HomeIcon class="text-purple-600 h-12 w-12 mb-4 mx-auto" />
-          <h3 class="text-lg font-semibold text-gray-800 mb-4">Pekerjaan Konstruksi Umum</h3>
-          <p class="text-gray-600">Kami menangani berbagai jenis proyek konstruksi mulai dari rumah tinggal hingga gedung besar.</p>
+
+      <!-- Grid Card -->
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <!-- Service 1 -->
+        <div class="bg-gray-800 bg-opacity-80 rounded-xl shadow-lg p-6 flex flex-col items-center transition-transform hover:scale-105">
+          <BoltIcon class="w-14 h-14 text-blue-400 mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Gali Kabel PLN</h3>
+          <p class="text-sm mb-4 text-center">
+            Layanan penggalian kabel untuk jaringan listrik PLN dengan standar keamanan tinggi dan hasil optimal.
+          </p>
+          <NuxtLink
+            to="/services/pln"
+            class="mt-auto px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700 transition duration-300"
+          >
+            Selengkapnya
+          </NuxtLink>
         </div>
-        <!-- Layanan 2 -->
-        <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-          <PaintBrushIcon class="text-purple-600 h-12 w-12 mb-4 mx-auto" />
-          <h3 class="text-lg font-semibold text-gray-800 mb-4">Pengecatan dan Finishing</h3>
-          <p class="text-gray-600">Memberikan hasil pengecatan yang rapi dan finishing yang detail untuk memberikan kesan estetika pada bangunan.</p>
+
+        <!-- Service 2 -->
+        <div class="bg-gray-800 bg-opacity-80 rounded-xl shadow-lg p-6 flex flex-col items-center transition-transform hover:scale-105">
+          <LightBulbIcon class="w-14 h-14 text-yellow-400 mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Gali Kabel PJU</h3>
+          <p class="text-sm mb-4 text-center">
+            Pengerjaan penggalian kabel untuk Penerangan Jalan Umum (PJU) dengan waktu pengerjaan yang tepat.
+          </p>
+          <NuxtLink
+            to="/services/pju"
+            class="mt-auto px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700 transition duration-300"
+          >
+            Selengkapnya
+          </NuxtLink>
         </div>
-        <!-- Layanan 3 -->
-        <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-          <WrenchScrewdriverIcon class="text-purple-600 h-12 w-12 mb-4 mx-auto" />
-          <h3 class="text-lg font-semibold text-gray-800 mb-4">Perbaikan Bangunan</h3>
-          <p class="text-gray-600">Kami juga menyediakan layanan perbaikan bangunan yang rusak atau membutuhkan renovasi.</p>
+
+        <!-- Service 3 -->
+        <div class="bg-gray-800 bg-opacity-80 rounded-xl shadow-lg p-6 flex flex-col items-center transition-transform hover:scale-105">
+          <VideoCameraIcon class="w-14 h-14 text-green-400 mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Gali Kabel CCTV</h3>
+          <p class="text-sm mb-4 text-center">
+            Solusi penggalian kabel untuk jaringan CCTV jalan raya dengan efisiensi tinggi.
+          </p>
+          <NuxtLink
+            to="/services/cctv"
+            class="mt-auto px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700 transition duration-300"
+          >
+            Selengkapnya
+          </NuxtLink>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="bg-gray-800 bg-opacity-80 rounded-xl shadow-lg p-6 flex flex-col items-center transition-transform hover:scale-105">
+          <SparklesIcon class="w-14 h-14 text-purple-400 mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Gali Kabel Lampu Taman</h3>
+          <p class="text-sm mb-4 text-center">
+            Penggalian kabel untuk lampu taman yang mempercantik dan menambah estetika lingkungan Anda.
+          </p>
+          <NuxtLink
+            to="/services/lampu-taman"
+            class="mt-auto px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700 transition duration-300"
+          >
+            Selengkapnya
+          </NuxtLink>
         </div>
       </div>
     </div>
   </section>
-</div>
 </template>
 
 <script setup>
-import { HomeIcon, PaintBrushIcon, WrenchScrewdriverIcon } from '@heroicons/vue/24/solid';
+import { BoltIcon, LightBulbIcon, VideoCameraIcon, SparklesIcon } from '@heroicons/vue/24/solid'
 </script>
+
+<style scoped>
+/* Tambahkan gaya jika diperlukan */
+</style>
