@@ -30,7 +30,7 @@
           <!-- Dropdown Content -->
           <div
             v-if="isDropdownOpen"
-            class="absolute left-1/2 transform -translate-x-1/2 bg-white text-black shadow-lg rounded-md mt-2 grid grid-cols-2 gap-4 w-64 p-4 z-50"
+            class="absolute left-0 bg-white text-black shadow-lg rounded-md mt-2 w-64 p-4 z-50"
             @mouseenter="openDropdown"
             @mouseleave="closeDropdown"
           >
@@ -91,13 +91,54 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div v-if="isMobileMenuOpen" class="md:hidden bg-white text-black shadow-lg p-4 space-y-4">
+    <div v-if="isMobileMenuOpen" class="md:hidden bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg p-4 space-y-4">
       <NuxtLink to="/" class="block hover:underline" @click="closeMobileMenu">Beranda</NuxtLink>
       <NuxtLink to="/about" class="block hover:underline" @click="closeMobileMenu">Tentang Kami</NuxtLink>
-      <NuxtLink to="/services/pln" class="block hover:underline" @click="closeMobileMenu">Gali Kabel PLN</NuxtLink>
-      <NuxtLink to="/services/pju" class="block hover:underline" @click="closeMobileMenu">Gali Kabel PJU</NuxtLink>
-      <NuxtLink to="/services/cctv" class="block hover:underline" @click="closeMobileMenu">Gali Kabel CCTV</NuxtLink>
-      <NuxtLink to="/services/fiber-optic" class="block hover:underline" @click="closeMobileMenu">Gali Kabel Fiber Optic</NuxtLink>
+
+      <!-- Mobile Dropdown for Services -->
+      <div class="relative">
+        <button
+          class="flex items-center space-x-2 focus:outline-none w-full text-left"
+          @click="toggleDropdownMobile"
+        >
+          <span>Layanan</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <!-- Mobile Dropdown Content -->
+        <div v-if="isDropdownMobileOpen" class="bg-white text-black rounded-md mt-2 p-4">
+          <NuxtLink
+            to="/services/pln"
+            class="block hover:bg-blue-100 px-4 py-2 rounded-md"
+            @click="closeMobileMenu"
+          >
+            Gali Kabel PLN
+          </NuxtLink>
+          <NuxtLink
+            to="/services/pju"
+            class="block hover:bg-blue-100 px-4 py-2 rounded-md"
+            @click="closeMobileMenu"
+          >
+            Gali Kabel PJU
+          </NuxtLink>
+          <NuxtLink
+            to="/services/cctv"
+            class="block hover:bg-blue-100 px-4 py-2 rounded-md"
+            @click="closeMobileMenu"
+          >
+            Gali Kabel CCTV
+          </NuxtLink>
+          <NuxtLink
+            to="/services/fiber-optic"
+            class="block hover:bg-blue-100 px-4 py-2 rounded-md"
+            @click="closeMobileMenu"
+          >
+            Gali Kabel Fiber Optic
+          </NuxtLink>
+        </div>
+      </div>
+
       <NuxtLink to="/contact" class="block hover:underline" @click="closeMobileMenu">Hubungi Kami</NuxtLink>
     </div>
   </nav>
@@ -108,6 +149,7 @@ import { ref } from 'vue'
 
 const isMobileMenuOpen = ref(false)
 const isDropdownOpen = ref(false)
+const isDropdownMobileOpen = ref(false)
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
@@ -124,17 +166,25 @@ const openDropdown = () => {
 const closeDropdown = () => {
   isDropdownOpen.value = false
 }
+
+const toggleDropdownMobile = () => {
+  isDropdownMobileOpen.value = !isDropdownMobileOpen.value
+}
 </script>
 
 <style scoped>
-.group:hover .group-hover\\:grid {
-  display: grid !important;
-}
+/* Dropdown styling for mobile */
+@media (max-width: 768px) {
+  .bg-gradient-to-r {
+    background: #1d4ed8; /* Same blue as desktop */
+  }
 
-@media (min-width: 768px) {
-  /* Dropdown stays below the menu */
-  .absolute {
-    top: 100%;
+  .dropdown-content {
+    display: none;
+  }
+
+  .dropdown-content.open {
+    display: block;
   }
 }
 </style>
