@@ -63,6 +63,7 @@
           </div>
         </div>
 
+        <NuxtLink to="/blog" class="hover:text-indigo-200 transition duration-300">Blog</NuxtLink>
         <NuxtLink to="/contact" class="hover:text-indigo-200 transition duration-300">Hubungi Kami</NuxtLink>
       </div>
 
