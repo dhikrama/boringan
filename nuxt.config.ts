@@ -17,6 +17,10 @@ export default defineNuxtConfig({
     },
   },
 
+  // nitro:{
+  //   preset: 'static'
+  // },
+
   // other configurations 
   ssr: true,
 

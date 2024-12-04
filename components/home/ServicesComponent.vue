@@ -61,7 +61,7 @@
             Penggalian kabel untuk lampu taman yang mempercantik dan menambah estetika lingkungan Anda.
           </p>
           <NuxtLink
-            to="/services/lampu-taman"
+            to="/services/fiber-optic"
             class="mt-auto px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700 transition duration-300"
           >
             Selengkapnya

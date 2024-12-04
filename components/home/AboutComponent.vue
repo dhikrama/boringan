@@ -4,7 +4,7 @@
       <!-- Gambar dan Komunitas -->
       <div class="relative">
         <nuxt-img
-          src="/images/about-us-example.webp"
+          src="/images/about-us-image.webp"
           alt="Happy Community"
           class="rounded-xl shadow-lg w-full"
         />
