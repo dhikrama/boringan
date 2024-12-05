@@ -1,116 +1,49 @@
 <template>
-  <div class="bg-gray-50 min-h-screen">
-    <!-- Loading Indicator -->
-    <div v-if="isLoading" class="flex justify-center items-center h-screen">
-      <div class="text-center">
-        <svg
-          class="animate-spin h-8 w-8 text-gray-600 mx-auto"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle
-            class="opacity-25"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            stroke-width="4"
-          ></circle>
-          <path
-            class="opacity-75"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8v8H4z"
-          ></path>
-        </svg>
-        <p class="text-gray-600 mt-2">Mengambil data, Harap menunggu...</p>
-      </div>
-    </div>
-
-    <!-- Content -->
-    <div v-else>
-      <!-- News Update Section -->
-      <div class="bg-white shadow-md py-4 mb-8">
-        <div class="container mx-auto px-6">
-          <div class="flex justify-between items-center">
-            <h3 class="text-lg font-bold">News Update</h3>
-            <span class="text-sm text-gray-500">Updated every hour</span>
-          </div>
-          <div class="flex flex-wrap mt-4 space-x-6">
-            <!-- News Card -->
-            <div
-              v-for="(news, index) in newsUpdate"
-              :key="index"
-              class="w-full sm:w-1/2 md:w-1/3 p-2"
-            >
-              <div class="bg-gray-100 rounded-lg p-4">
-                <h4 class="text-md font-semibold">{{ news.title }}</h4>
-                <p class="text-sm text-gray-500">{{ news.publishedAt }}</p>
-                <p class="text-base mt-3">
-                  {{ getSnippet(news.content) }}
-                  <a :href="news.url" target="_blank" class="text-blue-500"
-                    >Read More</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
+  <div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div v-for="post in posts" :key="post.id" class="bg-white shadow-md rounded-lg overflow-hidden">
+        <!-- <img :src="post.thumbnail" alt="Post Image" class="w-full h-48 object-cover" /> -->
+        <div class="p-4">
+          <h2 class="text-xl font-bold text-gray-800">{{ post.title }}</h2>
+          <p class="text-sm text-gray-500">{{ post.excerpt }}</p>
+          <!-- Menggunakan NuxtLink dengan slug yang benar -->
+          <NuxtLink :to="`/blog/${generateSlug(post.title)}`">Read More</NuxtLink>
         </div>
       </div>
     </div>
   </div>
 </template>
 
+
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted } from 'vue'
 
-const isLoading = ref(true); // State untuk loading
-const newsUpdate = ref([]);
+// State untuk menampung data postingan
+const posts = ref([])
 
-// Fungsi mengambil cuplikan teks
-const getSnippet = (content) => {
-  if (!content) return "";
-  const div = document.createElement("div");
-  div.innerHTML = content;
-  return div.innerText?.substring(0, 150) + "...";
-};
+// Fungsi untuk menghasilkan slug dari judul
+function generateSlug(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')  // Menghapus karakter khusus
+    .replace(/\s+/g, '-')          // Mengganti spasi dengan tanda hubung
+    .replace(/-+/g, '-')           // Menghapus tanda hubung ganda
+}
 
-// Ambil data saat komponen dimuat
+// Fetch data blog
 onMounted(async () => {
   try {
-    const { data: blogData } = await useFetch("/api/blog");
+    const response = await fetch('https://www.googleapis.com/blogger/v3/blogs/3462907902652169422/posts?key=AIzaSyA2-Ljqejll0cpOEH0xF3eLd2FrYmmoBLg')
+    const data = await response.json()
 
-    if (blogData.value) {
-      newsUpdate.value = blogData.value.map((post) => ({
-        id: post.id,
-        title: post.title,
-        publishedAt: post.published,
-        content: post.content,
-        url: post.url, // URL untuk read more ke Blogger
-      }));
-    } else {
-      console.error("Blog data is empty or undefined");
-    }
+    // Memformat data untuk menambahkan `excerpt` dan `thumbnail` (optional)
+    posts.value = data.items.map(post => ({
+      ...post,
+      excerpt: post.content.substring(0, 100), // Ambil 100 karakter pertama untuk excerpt
+      thumbnail: post.images ? post.images[0].url : '/default-thumbnail.jpg', // Ganti dengan URL gambar default jika tidak ada
+    }))
   } catch (error) {
-    console.error("Error fetching blog data:", error);
-  } finally {
-    isLoading.value = false; // Selesai loading
+    console.error('Error fetching posts:', error)
   }
-});
+})
 </script>
-
-<style scoped>
-/* Gaya untuk loading spinner */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-</style>
