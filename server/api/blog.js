@@ -1,27 +1,42 @@
+import { defineEventHandler } from 'h3';
+
 export default defineEventHandler(async () => {
-  const apiKey = 'AIzaSyA2-Ljqejll0cpOEH0xF3eLd2FrYmmoBLg';
-  const blogId = '3462907902652169422'; 
-
-  const url = `https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts?key=${apiKey}`;
-
   try {
-    const response = await fetch(url);
+    const BLOGGER_API_URL = 'https://www.googleapis.com/blogger/v3/blogs/3462907902652169422/posts';
+    const API_KEY = 'AIzaSyA2-Ljqejll0cpOEH0xF3eLd2FrYmmoBLg';
 
-    if (!response.ok) {
-      throw new Error(`Error fetching data: ${response.statusText}`);
-    }
-
+    // Fetch data dari Blogger API
+    const response = await fetch(`${BLOGGER_API_URL}?key=${API_KEY}`);
     const data = await response.json();
 
-    // Log data untuk memverifikasi bahwa kita mendapatkan data yang benar
-    console.log('Fetched Data:', data);
+    if (!data || !data.items) {
+      throw new Error('Failed to fetch blog data or no items available.');
+    }
 
-    return data; // Mengembalikan objek data yang berisi array "items"
+    // Format ulang data jika diperlukan
+    const formattedData = data.items.map((item) => ({
+      id: item.id,
+      title: item.title,
+      slug: item.title
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-'),
+      published: item.published,
+      content: item.content,
+      url: item.url,
+    }));
+
+    // Kembalikan data
+    return {
+      success: true,
+      posts: formattedData,
+    };
   } catch (error) {
-    console.error('Error fetching Blogger API:', error.message);
-    throw createError({
-      statusCode: 502,
-      statusMessage: 'Failed to fetch data from Blogger API',
-    });
+    console.error(error.message);
+    return {
+      success: false,
+      message: error.message,
+    };
   }
 });

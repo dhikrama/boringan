@@ -19,35 +19,15 @@
   const post = ref(null)
   const route = useRoute()
   
-  // Fungsi untuk menghasilkan slug dari judul (untuk pencocokan URL)
-  function generateSlug(title) {
-    return title
-      .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, '') // Menghapus karakter khusus
-      .replace(/\s+/g, '-')         // Mengganti spasi dengan tanda hubung
-      .replace(/-+/g, '-')          // Menghapus tanda hubung ganda
-  }
-  
-  // Debug: Cek slug yang diterima dari URL
-  console.log("Received slug:", route.params.slug)
-  
   onMounted(async () => {
-    const slug = route.params.slug
+    const postId = route.params.id
   
-    // Debug: Cek slug yang digunakan dalam pengambilan data
-    console.log("Fetching data for slug:", slug)
-  
+    // Fetch semua postingan
     const response = await fetch('https://www.googleapis.com/blogger/v3/blogs/3462907902652169422/posts?key=AIzaSyA2-Ljqejll0cpOEH0xF3eLd2FrYmmoBLg')
     const posts = await response.json()
   
-    // Debug: Cek data yang diterima dari API
-    console.log("API response:", posts)
-  
-    // Temukan postingan yang sesuai berdasarkan slug
-    post.value = posts.items?.find(p => generateSlug(p.title) === slug)
-  
-    // Debug: Cek apakah post ditemukan atau tidak
-    console.log("Post found:", post.value)
+    // Temukan postingan yang sesuai berdasarkan id
+    post.value = posts.items?.find(p => p.id === postId)
   
     // Jika post tidak ditemukan
     if (!post.value) {
