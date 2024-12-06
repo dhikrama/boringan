@@ -2,10 +2,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
-  
+
 
   app: {
-    baseURL:"/",
+    baseURL: "/",
     head: {
       htmlAttrs: {
         lang: 'id', // Mengatur atribut lang ke Indonesia
@@ -28,28 +28,29 @@ export default defineNuxtConfig({
   ssr: true,
 
   css: ['@/assets/css/tailwind.css'],
-
+  build: {
+    transpile: ['@headlessui/vue'],
+  },
   tailwindcss: {
-    exposeConfig: true,
-    viewer: true,
-    // and more...
+    // Konfigurasi opsional
+    viewer: true, // Untuk melihat hasil konfigurasi Tailwind di browser
   },
 
-    // plugins: ['~/plugins/canonical.js'],
+  // plugins: ['~/plugins/canonical.js'],
 
-    modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxt/icon'],
-    image: {
-      domains: ['cdn.jsdelivr.net'], // Daftarkan domain gambar yang diizinkan
-      provider: 'ipx', // Gunakan provider bawaan
-    },
+  modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxt/icon'],
+  image: {
+    domains: ['cdn.jsdelivr.net'], // Daftarkan domain gambar yang diizinkan
+    provider: 'ipx', // Gunakan provider bawaan
+  },
 
-    experimental: {
-      payloadExtraction: false
+  experimental: {
+    payloadExtraction: false
   },
   router: {
-      options: {
-          strict: false
-      }
+    options: {
+      strict: false
+    }
   },
-  
+
 })

@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-6xl mx-auto py-10 px-4">
     <h1 class="text-4xl font-bold text-gray-800 mb-8">Blog Posts</h1>
-    
+
     <div v-if="posts && posts.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div 
         v-for="post in paginatedPosts" 
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    
+
     <div v-else>
       <p>Loading blog posts...</p>
     </div>
@@ -51,21 +51,20 @@
 
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue';
-import { fetchBloggerPosts } from '~/utils/blogger';
-import { getFirstImage } from '~/utils/blogger';
-import type { BlogPost } from '~/utils/blogger'; // Mengimpor tipe secara eksplisit
+import { fetchWordPressPosts } from '~/utils/wordpress';
+import { getFirstImage } from '~/utils/wordpress';
+import type { BlogPost } from '~/utils/wordpress'; // Mengimpor tipe secara eksplisit
 
 const posts = ref<BlogPost[]>([]);
 const currentPage = ref(1);
 const perPage = 6; // Jumlah postingan per halaman
 
-// Ambil API Key dan Blog ID dari runtime config
-const apiKey = useRuntimeConfig().public.BLOGGER_API_KEY;
-const blogId = useRuntimeConfig().public.BLOGGER_BLOG_ID;
+// Ambil nama situs WordPress dari runtime config
+const site = useRuntimeConfig().public.WORDPRESS_SITE;
 
 onMounted(async () => {
   try {
-    posts.value = await fetchBloggerPosts(apiKey, blogId);
+    posts.value = await fetchWordPressPosts('rajaboringan.wordpress.com');
   } catch (error) {
     console.error('Gagal memuat daftar postingan:', error);
   }
