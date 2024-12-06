@@ -1,10 +1,3 @@
-// // https://nuxt.com/docs/api/configuration/nuxt-config
-// export default defineNuxtConfig({
-//   compatibilityDate: '2024-11-01',
-//   devtools: { enabled: true },
-//   ssr: true, // other configurations 
-// })
-
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -20,6 +13,13 @@ export default defineNuxtConfig({
     },
   },
 
+  runtimeConfig: {
+    public: {
+      BLOGGER_API_KEY: process.env.BLOGGER_API_KEY,
+      BLOGGER_BLOG_ID: process.env.BLOGGER_BLOG_ID,
+    },
+  },
+
   // nitro:{
   //   preset: 'static'
   // },
@@ -29,19 +29,27 @@ export default defineNuxtConfig({
 
   css: ['@/assets/css/tailwind.css'],
 
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
+  tailwindcss: {
+    exposeConfig: true,
+    viewer: true,
+    // and more...
   },
 
     // plugins: ['~/plugins/canonical.js'],
 
-    modules: ['@nuxt/image'],
+    modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxt/icon'],
     image: {
       domains: ['cdn.jsdelivr.net'], // Daftarkan domain gambar yang diizinkan
       provider: 'ipx', // Gunakan provider bawaan
     },
+
+    experimental: {
+      payloadExtraction: false
+  },
+  router: {
+      options: {
+          strict: false
+      }
+  },
   
 })
