@@ -93,11 +93,6 @@ const formattedContent = computed(() => {
   return '';
 });
 
-definePageMeta({
-  middleware: 'notify-indexnow', // Menetapkan middleware hanya untuk halaman ini
-});
-
-
 </script>
 
 <style scoped>

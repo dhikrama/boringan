@@ -1,13 +1,14 @@
+// nuxt.config.ts
+import { fetchBloggerPosts } from './utils/blogger';
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-routeRules:{
-  '/': {prerender:true},
-  '/blog': { isr: 3600 },
-    // Blog post page generated on demand once until next deployment, cached on CDN
+  routeRules: {
+    '/': { prerender: true },
+    '/blog': { isr: 3600 },
     '/blog/**': { isr: true },
-},
-
+  },
 
   app: {
     baseURL: "/",
@@ -26,43 +27,65 @@ routeRules:{
     },
   },
 
-  // nitro:{
-  //   preset: 'static'
-  // },
-
-  // other configurations 
   ssr: true,
 
   css: ['@/assets/css/tailwind.css'],
   build: {
     transpile: ['@headlessui/vue'],
   },
+
   tailwindcss: {
-    // Konfigurasi opsional
     viewer: true, // Untuk melihat hasil konfigurasi Tailwind di browser
   },
 
-  // plugins: ['~/plugins/canonical.js'],
-
-  modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxt/icon'],
+  modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/sitemap'],
   image: {
-    domains: ['cdn.jsdelivr.net'], // Daftarkan domain gambar yang diizinkan
+    domains: ['cdn.jsdelivr.net'],
   },
 
   icon: {
     serverBundle: {
-      collections: ['uil'] // <!--- this
+      collections: ['uil'],
     }
   },
 
-  experimental: {
-    payloadExtraction: false
-  },
-  router: {
-    options: {
-      strict: false
-    }
-  },
+    // Mendapatkan URL dari API Blogger
+    sitemap: {
+      excludeAppSources: ['nuxt:pages'], // Menonaktifkan sumber aplikasi otomatis
   
-
-})
+      // Mendapatkan URL dari API Blogger
+      urls: async () => {
+        const apiKey = 'AIzaSyA2-Ljqejll0cpOEH0xF3eLd2FrYmmoBLg'; // Gunakan API Key langsung
+        const blogId = '3462907902652169422'; // Gunakan Blog ID langsung
+  
+        try {
+          // Memanggil fungsi fetchBloggerPosts untuk mengambil data dari API Blogger
+          const posts = await fetchBloggerPosts(apiKey, blogId);
+  
+          // Memastikan data ada dan valid
+          if (posts && Array.isArray(posts)) {
+            // Membuat URL untuk setiap post
+            const postUrls = posts.map((post: { slug: string }) => `/blog/post/${post.slug}`);
+  
+            // Menambahkan URL statis lainnya
+            const staticUrls = [
+              '/about',
+              '/contact',
+              '/services/pln',
+              '/services/fiber-optic',
+              '/services/cctv',
+            ];
+  
+            // Menggabungkan URL dari post dan URL statis
+            return [...postUrls, ...staticUrls];
+          } else {
+            console.error('API response does not contain valid posts');
+            return [];
+          }
+        } catch (error) {
+          console.error('Error fetching data from Blogger API:', error);
+          return [];
+        }
+      },
+    },
+});
