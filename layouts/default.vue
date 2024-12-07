@@ -16,7 +16,7 @@ useHead({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "MauNguli",
+        "name": "Mitra Boringan",
         "url": "https://www.boringan.com",
         "logo": "https://www.boringan.com/logo.png"
       })
