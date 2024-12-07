@@ -51,10 +51,16 @@
 </template>
 
 <script setup lang="ts">
+
 import { ref, onMounted, computed } from 'vue';
 import { fetchBloggerPosts } from "~/utils/blogger";
 import { getFirstImage } from '~/utils/blogger';
 import type { BlogPost } from '~/utils/blogger'; // Mengimpor tipe secara eksplisit
+
+definePageMeta({
+  middleware: 'notify-indexnow', // Menetapkan middleware hanya untuk halaman ini
+});
+
 
 const posts = ref<BlogPost[]>([]);
 const currentPage = ref(1);
