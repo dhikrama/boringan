@@ -1,5 +1,6 @@
 <template>
   <div class="max-w-6xl mx-auto py-10 px-4">
+    
     <h1 class="text-4xl font-bold text-gray-800 mb-8">Blog Posts</h1>
 
     <div v-if="posts && posts.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -51,9 +52,9 @@
 
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue';
-import { fetchWordPressPosts } from '~/utils/wordpress';
-import { getFirstImage } from '~/utils/wordpress';
-import type { BlogPost } from '~/utils/wordpress'; // Mengimpor tipe secara eksplisit
+import { fetchBloggerPosts } from "~/utils/blogger";
+import { getFirstImage } from '~/utils/blogger';
+import type { BlogPost } from '~/utils/blogger'; // Mengimpor tipe secara eksplisit
 
 const posts = ref<BlogPost[]>([]);
 const currentPage = ref(1);
@@ -63,8 +64,10 @@ const perPage = 6; // Jumlah postingan per halaman
 const site = useRuntimeConfig().public.WORDPRESS_SITE;
 
 onMounted(async () => {
+ const apiKey = useRuntimeConfig().public.BLOGGER_API_KEY
+ const blogID = useRuntimeConfig().public.BLOGGER_BLOG_ID
   try {
-    posts.value = await fetchWordPressPosts('rajaboringan.wordpress.com');
+    posts.value = await fetchBloggerPosts(apiKey, blogID);
   } catch (error) {
     console.error('Gagal memuat daftar postingan:', error);
   }

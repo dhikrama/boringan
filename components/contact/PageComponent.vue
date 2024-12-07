@@ -17,7 +17,7 @@
             </svg>
           </div>
           <h3 class="text-lg font-semibold text-gray-800">Telepon</h3>
-          <p class="text-gray-600">+62 812-3456-7890</p>
+          <p class="text-gray-600">+62 831-1344-4750</p>
         </div>
         <!-- Email -->
         <div>
@@ -27,7 +27,7 @@
             </svg>
           </div>
           <h3 class="text-lg font-semibold text-gray-800">Email</h3>
-          <p class="text-gray-600">info@maunguli.com</p>
+          <p class="text-gray-600">rajaboringan@gmail.com</p>
         </div>
         <!-- Alamat -->
         <div>

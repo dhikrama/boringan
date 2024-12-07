@@ -3,14 +3,14 @@
     <div class="container mx-auto px-6 lg:px-12 text-center">
       <h2 class="text-3xl font-bold mb-4">Layanan Kami</h2>
       <p class="text-lg mb-12">
-        Kami menyediakan berbagai layanan penggalian kabel untuk kebutuhan Anda, meliputi PLN, PJU, CCTV, Lampu Taman, dan lainnya, dengan hasil profesional dan terpercaya.
+        Kami menyediakan berbagai layanan penggalian kabel untuk kebutuhan Anda, meliputi PLN, PJU, CCTV, Kabel Fiber Optik, dan lainnya, dengan hasil profesional dan terpercaya.
       </p>
 
       <!-- Grid Card -->
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <!-- Service 1 -->
         <div class="bg-gray-800 bg-opacity-80 rounded-xl shadow-lg p-6 flex flex-col items-center transition-transform hover:scale-105">
-          <BoltIcon class="w-14 h-14 text-blue-400 mb-4" />
+          <Icon name="uil:bolt" class="w-14 h-14 text-blue-400 mb-4" />
           <h3 class="text-lg font-semibold mb-2">Gali Kabel PLN</h3>
           <p class="text-sm mb-4 text-center">
             Layanan penggalian kabel untuk jaringan listrik PLN dengan standar keamanan tinggi dan hasil optimal.
@@ -25,7 +25,7 @@
 
         <!-- Service 2 -->
         <div class="bg-gray-800 bg-opacity-80 rounded-xl shadow-lg p-6 flex flex-col items-center transition-transform hover:scale-105">
-          <LightBulbIcon class="w-14 h-14 text-yellow-400 mb-4" />
+          <Icon name="uil:lightbulb" class="w-14 h-14 text-yellow-400 mb-4" />
           <h3 class="text-lg font-semibold mb-2">Gali Kabel PJU</h3>
           <p class="text-sm mb-4 text-center">
             Pengerjaan penggalian kabel untuk Penerangan Jalan Umum (PJU) dengan waktu pengerjaan yang tepat.
@@ -40,7 +40,7 @@
 
         <!-- Service 3 -->
         <div class="bg-gray-800 bg-opacity-80 rounded-xl shadow-lg p-6 flex flex-col items-center transition-transform hover:scale-105">
-          <VideoCameraIcon class="w-14 h-14 text-green-400 mb-4" />
+          <Icon name="uil:video" class="w-14 h-14 text-green-400 mb-4" />
           <h3 class="text-lg font-semibold mb-2">Gali Kabel CCTV</h3>
           <p class="text-sm mb-4 text-center">
             Solusi penggalian kabel untuk jaringan CCTV jalan raya dengan efisiensi tinggi.
@@ -55,10 +55,10 @@
 
         <!-- Service 4 -->
         <div class="bg-gray-800 bg-opacity-80 rounded-xl shadow-lg p-6 flex flex-col items-center transition-transform hover:scale-105">
-          <SparklesIcon class="w-14 h-14 text-purple-400 mb-4" />
-          <h3 class="text-lg font-semibold mb-2">Gali Kabel Lampu Taman</h3>
+          <Icon name="uil:server-network" class="w-14 h-14 text-purple-400 mb-4" />
+          <h3 class="text-lg font-semibold mb-2">Gali Kabel Fiber Optik</h3>
           <p class="text-sm mb-4 text-center">
-            Penggalian kabel untuk lampu taman yang mempercantik dan menambah estetika lingkungan Anda.
+            Penggalian kabel fiber optik untuk jaringan komunikasi berkecepatan tinggi dengan kualitas terbaik.
           </p>
           <NuxtLink
             to="/services/fiber-optic"
@@ -73,7 +73,7 @@
 </template>
 
 <script setup>
-import { BoltIcon, LightBulbIcon, VideoCameraIcon, SparklesIcon } from '@heroicons/vue/24/solid'
+// Anda tidak perlu melakukan import ikon karena Nuxt 3 sudah menangani Nuxt Icon secara otomatis
 </script>
 
 <style scoped>

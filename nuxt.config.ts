@@ -1,7 +1,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-
+routeRules:{
+  '/': {prerender:true},
+  '/blog': { isr: 3600 },
+    // Blog post page generated on demand once until next deployment, cached on CDN
+    '/blog/**': { isr: true },
+},
 
 
   app: {
@@ -11,6 +16,7 @@ export default defineNuxtConfig({
         lang: 'id', // Mengatur atribut lang ke Indonesia
       },
     },
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
 
   runtimeConfig: {
@@ -44,6 +50,12 @@ export default defineNuxtConfig({
     provider: 'ipx', // Gunakan provider bawaan
   },
 
+  icon: {
+    serverBundle: {
+      collections: ['uil'] // <!--- this
+    }
+  },
+
   experimental: {
     payloadExtraction: false
   },
@@ -52,5 +64,6 @@ export default defineNuxtConfig({
       strict: false
     }
   },
+  
 
 })
