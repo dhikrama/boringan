@@ -1,13 +1,15 @@
 {
-    "routes": [
-      {
-        "route": "/*",
-        "serve": "/index.html",
-        "statusCode": 200
-      }
-    ],
-    "navigationFallback": {
-      "rewrite": "/index.html"
+  "routes": [
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "source": "/(.*)",
+      "destination": "https://www.boringan.com/$1",
+      "type": "Redirect",
+      "statusCode": 301
     }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html"
   }
-  
+}
