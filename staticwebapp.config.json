@@ -2,14 +2,12 @@
   "routes": [
     {
       "route": "/*",
-      "serve": "/index.html",
-      "source": "/(.*)",
-      "destination": "https://www.boringan.com/$1",
-      "type": "Redirect",
+      "redirect": "https://www.domain.com/{*path}",
       "statusCode": 301
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html"
     }
-  ],
-  "navigationFallback": {
-    "rewrite": "/index.html"
-  }
+  ]
 }
