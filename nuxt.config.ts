@@ -47,7 +47,6 @@ routeRules:{
   modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxt/icon'],
   image: {
     domains: ['cdn.jsdelivr.net'], // Daftarkan domain gambar yang diizinkan
-    provider: 'ipx', // Gunakan provider bawaan
   },
 
   icon: {
