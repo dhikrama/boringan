@@ -59,8 +59,8 @@ export default defineNuxtConfig({
   
       // Mendapatkan URL dari API Blogger
       urls: async () => {
-        const apiKey = 'AIzaSyA2-Ljqejll0cpOEH0xF3eLd2FrYmmoBLg'; // Gunakan API Key langsung
-        const blogId = '3462907902652169422'; // Gunakan Blog ID langsung
+        const apiKey = 'AIzaSyBBZgX-E9yG-jCFmWoU8c8rz4iFTsHWS74'; // Gunakan API Key langsung
+        const blogId = '9014814389136398054'; // Gunakan Blog ID langsung
   
         try {
           // Memanggil fungsi fetchBloggerPosts untuk mengambil data dari API Blogger
