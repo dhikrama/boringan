@@ -13,7 +13,7 @@
             proyek, seperti PJU, PLN, CCTV jalan, dan lampu taman. Dikerjakan oleh tenaga ahli yang berpengalaman.
           </p>
           <a
-            href="#contact"
+            href="https://wa.me/6283113444750"
             class="inline-block bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg shadow-md hover:bg-yellow-500 transition duration-300"
           >
             Hubungi Kami
