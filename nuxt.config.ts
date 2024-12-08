@@ -47,7 +47,7 @@ export default defineNuxtConfig({
     viewer: true, // Untuk melihat hasil konfigurasi Tailwind di browser
   },
 
-  modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/sitemap', 'nuxt-delay-hydration'],
+  modules: ['@nuxt/image', '@nuxtjs/sitemap', 'nuxt-delay-hydration', '@nuxt/ui'],
   image: {
     domains: ['cdn.jsdelivr.net'],
   },
@@ -57,7 +57,7 @@ export default defineNuxtConfig({
     mode: 'mount',
     // enables nuxt-delay-hydration in dev mode for testing
     // NOTE: you should disable this once you've finished testing, it will break HMR
-    debug: process.env.NODE_ENV === 'development'
+    // debug: process.env.NODE_ENV === 'development'
   },
 
   icon: {

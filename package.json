@@ -14,6 +14,7 @@
     "@iconify-json/uil": "^1.2.1",
     "@mdi/js": "^7.4.47",
     "@nuxt/image": "^1.8.1",
+    "@nuxt/ui": "^2.19.2",
     "@tailwindcss/typography": "^0.5.15",
     "dompurify": "^3.2.2",
     "nuxt": "^3.14.1592",
@@ -24,9 +25,7 @@
   "devDependencies": {
     "@iconify-json/mdi": "^1.2.1",
     "@nuxt/content": "^2.13.4",
-    "@nuxt/icon": "^1.9.1",
     "@nuxtjs/sitemap": "^7.0.0",
-    "@nuxtjs/tailwindcss": "^6.12.2",
     "@types/dompurify": "^3.0.5",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",

@@ -12,7 +12,7 @@
 <script setup>
 
 useHead({
-  title: 'Raja Boringan - Jasa galien teknik boringan',
+  title: 'Mitra Gali - Jasa galian teknik boringan',
   meta: [
     {
       name: 'description',

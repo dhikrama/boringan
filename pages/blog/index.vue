@@ -33,7 +33,8 @@
     </div>
 
     <div v-else>
-      <p>Loading blog posts...</p>
+      <p>Mengambil Data...</p>
+      <UProgress animation="carousel" />
     </div>
 
     <!-- Paginasi -->

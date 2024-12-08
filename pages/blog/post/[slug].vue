@@ -5,7 +5,11 @@
       <div class="flex-1">
         <div v-if="loading" class="flex justify-center items-center h-96 text-center">
           <div class="animate-spin rounded-full border-t-4 border-blue-500 w-16 h-16 border-solid"></div>
-          <p class="mt-4 text-lg text-gray-600">Memuat data postingan...</p>
+          <div>
+            <p class="mt-4 text-lg text-gray-600">
+              Memuat data postingan...</p>
+            <UProgress animation="carousel" />
+          </div>
         </div>
 
         <div v-else-if="post">
@@ -26,7 +30,7 @@
 
       <!-- Sidebar -->
       <aside class="w-full lg:w-1/3">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md"> 
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
           <h2 class="text-2xl font-bold text-gray-700 mb-4">Postingan Terbaru</h2>
           <ul class="space-y-3">
             <li v-for="(item, index) in sidebarItems" :key="index" class="text-purple-800 hover:text-blue-500">
@@ -83,7 +87,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: post?.value?.content 
+      content: post?.value?.content
         ? post?.value?.content.slice(0, 50) + (post?.value?.content.length > 50 ? '...' : '')
         : 'Default Description',
     },
@@ -127,14 +131,19 @@ const formattedContent = computed(() => {
 
 
 :deep(.postingan) {
-  font-family: 'Inter', sans-serif; /* Gunakan font modern */
-  color: #333; /* Warna teks utama */
+  font-family: 'Inter', sans-serif;
+  /* Gunakan font modern */
+  color: #333;
+  /* Warna teks utama */
 }
 
 :deep(.postingan h1) {
-  font-size: 2.5rem; /* Ukuran besar untuk headline utama */
-  font-weight: 700; /* Tebal */
-  color: #111; /* Warna tegas */
+  font-size: 2.5rem;
+  /* Ukuran besar untuk headline utama */
+  font-weight: 700;
+  /* Tebal */
+  color: #111;
+  /* Warna tegas */
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -145,7 +154,8 @@ const formattedContent = computed(() => {
   color: #222;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  border-left: 4px solid #3b82f6; /* Garis samping biru */
+  border-left: 4px solid #3b82f6;
+  /* Garis samping biru */
   padding-left: 1rem;
 }
 
@@ -158,25 +168,31 @@ const formattedContent = computed(() => {
 }
 
 :deep(.postingan p) {
-  font-size: 1rem; 
-  line-height: 1.8; /* Buat jarak antar baris lebih luas */
-  margin-bottom: 1.25rem; /* Jarak antar paragraf */
+  font-size: 1rem;
+  line-height: 1.8;
+  /* Buat jarak antar baris lebih luas */
+  margin-bottom: 1.25rem;
+  /* Jarak antar paragraf */
 }
 
 :deep(.postingan ul, .postingan ol) {
-  margin-left: 1.25rem; /* Jarak dari tepi kiri */
-  margin-bottom: 1.25rem; /* Jarak bawah */
+  margin-left: 1.25rem;
+  /* Jarak dari tepi kiri */
+  margin-bottom: 1.25rem;
+  /* Jarak bawah */
 }
 
 :deep(.postingan li) {
-  margin-bottom: 0.75rem; /* Jarak antar item dalam daftar */
+  margin-bottom: 0.75rem;
+  /* Jarak antar item dalam daftar */
   font-size: 1rem;
 }
 
 :deep(.postingan blockquote) {
   font-style: italic;
   color: #555;
-  border-left: 4px solid #3b82f6; /* Garis samping biru */
+  border-left: 4px solid #3b82f6;
+  /* Garis samping biru */
   padding-left: 1rem;
   margin-left: 0;
   margin-right: 0;
@@ -186,7 +202,8 @@ const formattedContent = computed(() => {
 
 :deep(.postingan img) {
   max-width: 100%;
-  border-radius: 8px; /* Membuat sudut gambar membulat */
+  border-radius: 8px;
+  /* Membuat sudut gambar membulat */
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -207,6 +224,4 @@ const formattedContent = computed(() => {
   background-color: #f4f4f4;
   font-weight: 700;
 }
-
-
 </style>
