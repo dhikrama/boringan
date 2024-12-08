@@ -48,6 +48,10 @@ export default defineNuxtConfig({
       collections: ['uil'],
     }
   },
+  site: {
+    url: 'http://www.boringan.com',
+    name: 'Raja Boringan sitemap',
+  },
 
     // Mendapatkan URL dari API Blogger
     sitemap: {
