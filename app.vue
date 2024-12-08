@@ -18,9 +18,6 @@ useHead({
       rel: 'canonical',
       href: `${baseUrl}${route.path}`, // URL dinamis berdasarkan path
     },
-  ],
+  ]
 });
-
-
 </script>
-
