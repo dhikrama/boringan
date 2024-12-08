@@ -24,6 +24,7 @@ useHead({
       async: true
     },
     {
+      type: 'text/javascript',
       children: `
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}

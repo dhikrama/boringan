@@ -9,9 +9,6 @@ export default defineNuxtConfig({
     '/blog': { isr: 3600 },
     '/blog/**': { isr: true },
   },
-  gtm: {
-    id: 'AW-16813484049'
-  },
 
   vite: {
     build: {
@@ -50,15 +47,13 @@ export default defineNuxtConfig({
     viewer: true, // Untuk melihat hasil konfigurasi Tailwind di browser
   },
 
-  modules: [
-    '@nuxt/image',
-    '@nuxtjs/sitemap',
-    'nuxt-delay-hydration',
-    '@nuxt/ui',
-    '@zadigetvoltaire/nuxt-gtm',
-  ],
+  modules: ['@nuxt/image', '@nuxtjs/sitemap', 'nuxt-delay-hydration', '@nuxt/ui', 'nuxt-gtag'],
   image: {
     domains: ['cdn.jsdelivr.net'],
+  },
+
+  gtag:{
+    id:"AW-16813484049"
   },
 
 
