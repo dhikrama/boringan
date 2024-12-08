@@ -7,11 +7,11 @@
 <script setup>
 
 useHead({
-  title: 'Hubungi Kami - MauNguli',
+  title: 'Hubungi Kami - Raja boringan mitra gali',
   meta: [
     {
       name: 'description',
-      content: 'Hubungi MauNguli untuk semua kebutuhan konstruksi Anda. Kami siap membantu mewujudkan proyek impian Anda dengan solusi terbaik.',
+      content: 'Hubungi Mitra gali untuk semua kebutuhan proyek penggalian kabel anda. Kami siap membantu mewujudkan proyek impian Anda dengan solusi terbaik.',
     },
   ],
 });

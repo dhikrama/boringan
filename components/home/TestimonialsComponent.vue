@@ -1,4 +1,5 @@
 <template>
+  <DelayHydration>
   <section class="bg-gray-100 py-10">
     <div class="max-w-6xl mx-auto px-4 text-center">
       <!-- Judul -->
@@ -57,6 +58,7 @@
       </div>
     </div>
   </section>
+</DelayHydration>
 </template>
 
 <style scoped>

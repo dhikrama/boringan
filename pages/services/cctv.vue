@@ -66,6 +66,19 @@
       </div>
     </section>
   </template>
+
+<script setup>
+useHead({
+  title: 'MItra Gali - Layanan Penggalian Kabel CCTV dengan Teknik Boring',
+  meta: [
+    {
+      name: 'description',
+      content: 'Kami menyediakan layanan penggalian kabel untuk sistem CCTV menggunakan teknik boring yang efisien, aman, dan minim gangguan. ',
+    },
+  ],
+  });
+  
+  </script>
   
   <style scoped>
   /* Styling khusus halaman layanan penggalian kabel CCTV dengan teknik boring */

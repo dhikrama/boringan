@@ -1,6 +1,7 @@
 <template>
   <section class="py-16 bg-gradient-to-br from-blue-900 via-blue-800 to-gray-900 text-white">
     <div class="container mx-auto px-6 lg:px-12 text-center">
+    <DelayHydration>
       <h2 class="text-3xl font-bold mb-4">Layanan Kami</h2>
       <p class="text-lg mb-12">
         Kami menyediakan berbagai layanan penggalian kabel untuk kebutuhan Anda, meliputi PLN, PJU, CCTV, Kabel Fiber Optik, dan lainnya, dengan hasil profesional dan terpercaya.
@@ -68,6 +69,7 @@
           </NuxtLink>
         </div>
       </div>
+    </DelayHydration>
     </div>
   </section>
 </template>

@@ -1,4 +1,5 @@
 <template>
+  <DelayHydration>
   <section class="bg-blue-600 text-white py-12 px-6">
     <div class="container mx-auto text-center space-y-6">
       <!-- Judul CTA -->
@@ -11,10 +12,10 @@
       <div class="flex justify-center gap-4">
         <!-- Tombol WhatsApp -->
         <a
-          href="https://wa.me/62xxxxxxxxx" 
+          href="https://wa.me/6283113444750" 
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md shadow-md transition-all"
+          class="flex items-center gap-2 bg-green-700 hover:bg-green-700 text-white px-6 py-3 rounded-md shadow-md transition-all"
         >
           <Icon name="mdi:whatsapp" class="w-5 h-5" />
           WhatsApp
@@ -31,6 +32,7 @@
       </div>
     </div>
   </section>
+</DelayHydration>
 </template>
 
 <script setup>

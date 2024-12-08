@@ -38,7 +38,7 @@
             </svg>
           </div>
           <h3 class="text-lg font-semibold text-gray-800">Alamat</h3>
-          <p class="text-gray-600">Jl. Konstruksi No. 123, Jakarta, Indonesia</p>
+          <p class="text-gray-600">Jl. Dukuh Nanggerang desa Cikuya banjarharjo</p>
         </div>
       </div>
 

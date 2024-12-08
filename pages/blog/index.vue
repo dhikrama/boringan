@@ -52,6 +52,16 @@
 
 <script setup lang="ts">
 
+useHead({
+  title: 'Mitra Gali - Halaman blog dan pembaruan aktifitas penggalian',
+  meta: [
+    {
+      name: 'description',
+      content: 'Pelajari lebih lanjut tentang Mitra Gali, Penyedia jasa tenaga gali yang berdedikasi memberikan layanan berkualitas tinggi dengan hasil memuaskan.',
+    },
+  ],
+});
+
 import { ref, onMounted, computed } from 'vue';
 import { fetchBloggerPosts } from "~/utils/blogger";
 import { getFirstImage } from '~/utils/blogger';

@@ -5,11 +5,11 @@
 <script setup>
 
 useHead({
-  title: 'Tentang MauNguli - Ahli Konstruksi Anda',
+  title: 'Tentang Raja Boringan - Ahli Gali menggunakan teknik boringan',
   meta: [
     {
       name: 'description',
-      content: 'Pelajari lebih lanjut tentang MauNguli, perusahaan yang berdedikasi memberikan layanan konstruksi berkualitas tinggi dengan hasil memuaskan.',
+      content: 'Pelajari lebih lanjut tentang Mitra Gali, Penyedia jasa tenaga gali yang berdedikasi memberikan layanan berkualitas tinggi dengan hasil memuaskan.',
     },
   ],
 });

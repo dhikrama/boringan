@@ -66,6 +66,19 @@
       </div>
     </section>
   </template>
+
+<script setup>
+useHead({
+title: 'MItra Gali - Layanan Penggalian Kabel PJU',
+meta: [
+  {
+    name: 'description',
+    content: 'Mitra Tenaga Galian menyediakan solusi penggalian kabel PJU menggunakan teknik boring yang cepat',
+  },
+],
+});
+
+</script>
   
   <style scoped>
   /* Styling khusus halaman layanan penggalian kabel PJU dengan teknik boring */

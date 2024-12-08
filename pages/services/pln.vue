@@ -2,7 +2,7 @@
     <section class="py-16 bg-gray-100">
       <div class="max-w-6xl mx-auto px-4 text-center">
         <!-- Judul -->
-        <h1 class="text-4xl font-bold text-gray-800 mb-6">Layanan Penggalian Kabel</h1>
+        <h1 class="text-4xl font-bold text-gray-800 mb-6">Layanan Penggalian Kabel PLN</h1>
         <p class="text-lg text-gray-600 mb-12">Kami menyediakan solusi penggalian kabel yang aman, cepat, dan efisien untuk kebutuhan listrik, telekomunikasi, dan berbagai proyek lainnya.</p>
   
         <!-- Deskripsi Layanan -->
@@ -65,6 +65,19 @@
       </div>
     </section>
   </template>
+
+  <script setup>
+  useHead({
+  title: 'MItra Gali - Layanan Penggalian Kabel PLN',
+  meta: [
+    {
+      name: 'description',
+      content: 'Kami menyediakan solusi penggalian kabel yang aman, cepat, dan efisien untuk kebutuhan listrik, telekomunikasi, dan berbagai proyek lainnya',
+    },
+  ],
+});
+
+</script>
   
   <style scoped>
   /* Styling khusus halaman layanan penggalian kabel */

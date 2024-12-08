@@ -46,6 +46,8 @@ import { fetchBloggerPosts } from '~/utils/blogger';
 import { getFirstImage } from '~/utils/blogger';
 import type { BlogPost } from '~/utils/blogger';
 
+
+
 const route = useRoute();
 const post = ref<BlogPost | null>(null);
 const loading = ref(true);
@@ -75,6 +77,19 @@ onMounted(async () => {
     console.log(post.value);
   }
 });
+
+useHead({
+  title: post?.value?.title || 'Default Title',
+  meta: [
+    {
+      name: 'description',
+      content: post?.value?.content 
+        ? post?.value?.content.slice(0, 50) + (post?.value?.content.length > 50 ? '...' : '')
+        : 'Default Description',
+    },
+  ],
+})
+
 
 // Mendapatkan URL gambar pertama dari konten postingan
 const firstImage = computed(() => {

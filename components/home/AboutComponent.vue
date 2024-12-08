@@ -1,4 +1,5 @@
 <template>
+  <DelayHydration>
   <section class="bg-white py-20">
     <div class="container mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 items-center">
       <!-- Gambar dan Komunitas -->
@@ -56,6 +57,7 @@
       </div>
     </div>
   </section>
+</DelayHydration>
 </template>
 
 <script setup>

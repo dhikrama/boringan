@@ -66,6 +66,19 @@
       </div>
     </section>
   </template>
+
+<script setup>
+useHead({
+  title: 'MItra Gali - Layanan Penggalian Kabel Fiber Optik dengan Teknik Boring',
+  meta: [
+    {
+      name: 'description',
+      content: 'Kami menawarkan layanan penggalian kabel fiber optik menggunakan teknik boring yang canggih dan efisien. Teknik ini memungkinkan pemasangan kabel fiber optik yang aman, minim gangguan, dan cepat tanpa merusak infrastruktur di sekitar lokasi.',
+    },
+  ],
+  });
+  
+  </script>
   
   <style scoped>
   /* Styling khusus halaman layanan penggalian kabel fiber optik dengan teknik boring */

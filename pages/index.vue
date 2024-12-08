@@ -12,11 +12,11 @@
 <script setup>
 
 useHead({
-  title: 'MauNguli - Jasa Konstruksi Berkualitas Tinggi',
+  title: 'Raja Boringan - Jasa galien teknik boringan',
   meta: [
     {
       name: 'description',
-      content: 'MauNguli menyediakan jasa konstruksi terpercaya untuk rumah, kantor, dan bangunan komersial. Hubungi kami untuk solusi konstruksi terbaik.',
+      content: 'Mitra gali menyediakan jasa tenaga terpercaya untuk penggalian kabel. Hubungi kami untuk solusi konstruksi terbaik.',
     },
   ],
 });

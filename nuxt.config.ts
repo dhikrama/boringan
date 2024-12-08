@@ -10,6 +10,15 @@ export default defineNuxtConfig({
     '/blog/**': { isr: true },
   },
 
+  vite: {
+    build: {
+      terserOptions: {
+        compress: true,
+        mangle: true
+      }
+    }
+  },
+
   app: {
     baseURL: "/",
     head: {
@@ -38,9 +47,17 @@ export default defineNuxtConfig({
     viewer: true, // Untuk melihat hasil konfigurasi Tailwind di browser
   },
 
-  modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/sitemap'],
+  modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/sitemap', 'nuxt-delay-hydration'],
   image: {
     domains: ['cdn.jsdelivr.net'],
+  },
+
+  
+  delayHydration: {
+    mode: 'mount',
+    // enables nuxt-delay-hydration in dev mode for testing
+    // NOTE: you should disable this once you've finished testing, it will break HMR
+    debug: process.env.NODE_ENV === 'development'
   },
 
   icon: {
