@@ -80,6 +80,8 @@
         <div v-if="isDropdownMobileOpen" class="bg-white text-black rounded-md mt-2 p-4">
           <NuxtLink to="/services/pln" class="block hover:bg-indigo-100 px-4 py-2 rounded-md transition-all duration-300" @click="closeMobileMenu">Gali Kabel PLN</NuxtLink>
           <NuxtLink to="/services/pju" class="block hover:bg-indigo-100 px-4 py-2 rounded-md transition-all duration-300" @click="closeMobileMenu">Gali Kabel PJU</NuxtLink>
+          <NuxtLink to="/services/cctv" class="block hover:bg-indigo-100 px-4 py-2 rounded-md transition-all duration-300" @click="closeMobileMenu">Gali Kabel PJU</NuxtLink>
+          <NuxtLink to="/services/fiber-optic" class="block hover:bg-indigo-100 px-4 py-2 rounded-md transition-all duration-300" @click="closeMobileMenu">Gali Kabel PJU</NuxtLink>
         </div>
       </div>
 
