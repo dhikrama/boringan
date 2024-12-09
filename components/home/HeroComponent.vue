@@ -34,7 +34,7 @@
     </div>
 
     <!-- Optional: Decorative background or effects -->
-    <div class="absolute inset-0 bg-black opacity-25"></div>
+    <div class="absolute inset-0 bg-black opacity-25 pointer-events-none"></div>
   </section>
 </template>
 
