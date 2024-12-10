@@ -1,3 +1,4 @@
 User-agent: *
-Disallow: /images/
-Disallow: /videos/
+Disallow: /admin/
+Allow: /
+Sitemap: https://www.boringan.com/sitemap.xml

@@ -38,7 +38,7 @@
           <p class="text-gray-300">
             <strong>Alamat:</strong> Jl. Dukuh Nanggerang desa Cikuya banjarharjo<br>
             <strong>Telepon:</strong>
-            <a href="tel:+628123456789" class="text-yellow-500 hover:underline">
+            <a rel="nofolow" href="tel:+628123456789" class="text-yellow-500 hover:underline">
               +62 831-1344-4750
             </a><br>
             <strong>Email:</strong>
@@ -50,7 +50,7 @@
           <!-- Ikon Media Sosial -->
           <div class="flex mt-4 space-x-4">
             <a 
-              href="https://facebook.com/mitragalikabel" 
+              href="https://web.facebook.com/61570061441315" 
               target="_blank" 
               aria-label="Kunjungi Facebook Mitra Gali Kabel"
               class="text-yellow-500 hover:text-white"
@@ -59,7 +59,7 @@
             </a>
             
             <a 
-              href="https://instagram.com/mitragalikabel" 
+              href="https://instagram.com/whanadiva.djaya" 
               target="_blank" 
               aria-label="Kunjungi Instagram Mitra Gali Kabel"
               class="text-yellow-500 hover:text-white"
@@ -68,12 +68,12 @@
             </a>
             
             <a 
-              href="https://linkedin.com/company/mitragalikabel" 
+              href="https://www.youtube.com/@MitraGaliKabel" 
               target="_blank" 
-              aria-label="Kunjungi LinkedIn Mitra Gali Kabel"
+              aria-label="Kunjungi Youtube Mitra Gali Kabel"
               class="text-yellow-500 hover:text-white"
             >
-              <Icon name="uil:linkedin" class="w-6 h-6" />
+              <Icon name="uil:youtube" class="w-6 h-6" />
             </a>
           </div>
         </div>
