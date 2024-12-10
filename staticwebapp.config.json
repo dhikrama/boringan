@@ -1,13 +1,1 @@
-{
-  "routes": [
-    {
-      "route": "/*",
-      "redirect": "https://www.domain.com/{*path}",
-      "statusCode": 301
-    },
-    {
-      "route": "/*",
-      "serve": "/index.html"
-    }
-  ]
-}
+{}
