@@ -56,7 +56,7 @@ export default defineNuxtConfig({
   //   id:"AW-16813484049"
   // },
 
-  // debug:true,
+  debug:true,
 
   // delayHydration: {
   //   mode: 'mount',
