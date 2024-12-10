@@ -57,12 +57,12 @@ export default defineNuxtConfig({
   },
 
 
-  delayHydration: {
-    mode: 'mount',
-    // enables nuxt-delay-hydration in dev mode for testing
-    // NOTE: you should disable this once you've finished testing, it will break HMR
-    // debug: process.env.NODE_ENV === 'development'
-  },
+  // delayHydration: {
+  //   mode: 'mount',
+  //   // enables nuxt-delay-hydration in dev mode for testing
+  //   // NOTE: you should disable this once you've finished testing, it will break HMR
+  //   // debug: process.env.NODE_ENV === 'development'
+  // },
 
   icon: {
     serverBundle: {
@@ -71,7 +71,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'http://www.boringan.com',
+    url: 'http://www.boringan.com/',
     name: 'Raja Boringan sitemap',
   },
 
