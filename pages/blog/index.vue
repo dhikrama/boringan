@@ -66,7 +66,7 @@ useHead({
 import { ref, onMounted, computed } from 'vue';
 import { fetchBloggerPosts } from "~/utils/blogger";
 import { getFirstImage } from '~/utils/blogger';
-import type { BlogPost } from '~/utils/blogger'; // Mengimpor tipe secara eksplisit
+import type { BlogPost } from '~/utils/blogger'; // Mengimpor ti~pe secara eksplisit
 
 const posts = ref<BlogPost[]>([]);
 const currentPage = ref(1);

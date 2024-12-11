@@ -1,8 +1,6 @@
 // nuxt.config.ts
 
-// import { fetchBloggerPosts } from '~/utils/blogger';
-
-
+import { fetchBloggerPosts } from './utils/blogger';
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
