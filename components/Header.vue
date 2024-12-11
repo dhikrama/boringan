@@ -39,7 +39,7 @@
           </div>
         </div>
 
-        <NuxtLink to="/blog" class="hover:text-indigo-200 transition duration-300">Blog</NuxtLink>
+        <NuxtLink to="https://rajaboringan.blogspot.com/" class="hover:text-indigo-200 transition duration-300">Blog</NuxtLink>
         <NuxtLink to="/contact" class="hover:text-indigo-200 transition duration-300">Hubungi Kami</NuxtLink>
       </div>
 
@@ -85,7 +85,7 @@
         </div>
       </div>
 
-      <NuxtLink to="/blog" class="block hover:text-indigo-200 transition duration-300" @click="closeMobileMenu">Blog</NuxtLink>
+      <NuxtLink to="https://rajaboringan.blogspot.com/" class="block hover:text-indigo-200 transition duration-300" @click="closeMobileMenu">Blog</NuxtLink>
       <NuxtLink to="/contact" class="block hover:text-indigo-200 transition duration-300" @click="closeMobileMenu">Hubungi Kami</NuxtLink>
     </div>
   </nav>
