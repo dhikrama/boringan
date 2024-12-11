@@ -105,7 +105,7 @@ import DOMPurify from 'dompurify';
 const formattedContent = computed(() => {
   if (post.value) {
     return DOMPurify.sanitize(post.value.content, {
-      ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'a', 'img', 'figure', 'hr', 'h4', 'h3'],
+      ALLOWED_TAGS: ['p', 'strong', 'em', 'ul', 'ol', 'li', 'a', 'img', 'figure', 'hr', 'h4', 'h3', 'src', 'iframe'],
       ALLOWED_ATTR: ['href', 'src', 'alt', 'title'],
     });
   }
