@@ -34,4 +34,13 @@ useHead({
     }
   ]
 });
+
+
 </script>
+
+<style scoped>
+/* Pastikan root div memiliki latar belakang putih */
+div {
+  background-color: white;
+}
+</style>
