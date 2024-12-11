@@ -47,16 +47,19 @@ export default defineNuxtConfig({
     viewer: true, // Untuk melihat hasil konfigurasi Tailwind di browser
   },
 
-  modules: ['@nuxt/image', '@nuxtjs/sitemap', 'nuxt-delay-hydration', '@nuxt/ui',],
+  modules: ['@nuxt/image', '@nuxtjs/sitemap', 'nuxt-delay-hydration', '@nuxt/ui', '@nuxtjs/robots'],
   image: {
     domains: ['cdn.jsdelivr.net'],
   },
 
+  robots:{
+    allow:'/'
+  },
   // gtag:{
   //   id:"AW-16813484049"
   // },
 
-  debug:true,
+  // debug:true,
 
   // delayHydration: {
   //   mode: 'mount',
