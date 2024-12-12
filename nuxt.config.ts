@@ -60,7 +60,7 @@ export default defineNuxtConfig({
     viewer: true, // Untuk melihat hasil konfigurasi Tailwind di browser
   },
 
-  modules: ['@nuxt/image', '@nuxtjs/sitemap', 'nuxt-delay-hydration', '@nuxt/ui', '@nuxtjs/robots', 'nuxt-mail'],
+  modules: ['nitro-cloudflare-dev', '@nuxt/image', '@nuxtjs/sitemap', 'nuxt-delay-hydration', '@nuxt/ui', '@nuxtjs/robots', 'nuxt-mail',],
   image: {
     domains: ['cdn.jsdelivr.net'],
   },

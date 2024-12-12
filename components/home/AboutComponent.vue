@@ -5,7 +5,7 @@
       <!-- Gambar dan Komunitas -->
       <div class="relative">
         <nuxt-img
-          src="/images/about-us-image.webp"
+          src="/images/team-mitra-gali.webp"
           alt="Happy Community"
           class="rounded-xl shadow-lg w-full"
         />

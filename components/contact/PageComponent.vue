@@ -1,15 +1,15 @@
 <template>
-  <div class="min-h-screen bg-white">
+  <div class="min-h-screen flex content-center flex-col bg-white">
     <!-- Header dengan Latar Belakang Biru -->
     <div class="bg-blue-600 text-white py-12 text-center">
-      <h1 class="text-4xl font-bold mb-4">Get In Touch</h1>
-      <p class="text-lg">
-        Drop us a line or visit us for a cup of coffee! We're glad to see our friends!
+      <h1 class="text-4xl font-bold mb-4">Kontak Person</h1>
+      <p class="text-lg mb-4">
+        Hubungi kami segera untuk mendapatkan konsultasi secara gratis, melalui email ataupun telepon.
       </p>
     </div>
 
     <!-- Konten Utama -->
-    <div class="max-w-4xl mx-5 bg-white rounded-lg shadow-lg mt-[-50px] overflow-hidden md:flex">
+    <div class="max-w-screen-lg mx-5 sm:mx-5 md:mx-auto bg-white rounded-lg shadow-lg mt-[-50px] overflow-hidden md:flex">
       <!-- Bagian Informasi Kontak -->
       <div class="bg-green-100 text-gray-800 p-12 md:w-1/2 flex flex-col justify-center">
         <ul class="space-y-4 text-lg">
@@ -20,7 +20,7 @@
             <span class="font-semibold">Telepon:</span> +62 831-1344-4750
           </li>
           <li>
-            <span class="font-semibold">Email:</span> rajaboringan@gmail.com
+            <span class="font-semibold">Email:</span> info@boringan.com
           </li>
         </ul>
       </div>
@@ -94,9 +94,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useNuxtApp } from '#app';
-
-const { $mail } = useNuxtApp();
 
 const formData = ref({
   name: '',
@@ -107,14 +104,14 @@ const formData = ref({
 const isSubmitting = ref(false); // Status tombol
 const successMessage = ref('');
 const errorMessage = ref('');
-
+const mail = useMail()
 const submitForm = async () => {
   isSubmitting.value = true; // Tombol dinonaktifkan saat proses
   successMessage.value = '';
   errorMessage.value = '';
 
   try {
-    await $mail.send({
+    await mail.send({
       from: 'info@boringan.com',
       to: 'info@boringan.com',
       replyTo: formData.value.email,

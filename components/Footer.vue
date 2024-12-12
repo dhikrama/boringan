@@ -43,7 +43,7 @@
             </a><br>
             <strong>Email:</strong>
             <a href="mailto:rajaboringan@gmail.com" class="text-yellow-500 hover:underline">
-              rajaboringan@gmail.com
+              info@boringan.com
             </a>
           </p>
           

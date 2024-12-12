@@ -23,7 +23,7 @@
         <!-- Right: Image or Illustration -->
         <div class="flex justify-center lg:justify-end">
           <NuxtImg
-            src="/images/about-us-image.webp"
+            src="/images/tukang-tenaga-gali.webp"
             alt="Pekerjaan penggalian kabel"
             class="rounded-lg shadow-lg object-cover max-w-full h-auto"
             width="600"
