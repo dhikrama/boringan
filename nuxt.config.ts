@@ -34,6 +34,19 @@ export default defineNuxtConfig({
       BLOGGER_API_KEY: process.env.BLOGGER_API_KEY,
       BLOGGER_BLOG_ID: process.env.BLOGGER_BLOG_ID,
     },
+
+    mail: {
+      message: {
+        to: 'info@boringan.com',
+      },
+      smtp: {
+        service: 'gmail',
+        auth: {
+          user: 'dhikrama.creator@gmail.com',
+          pass: process.env.PASS_GOOGLE_MAIL,
+        },
+      },
+    },
   },
 
   ssr: true,
@@ -47,7 +60,7 @@ export default defineNuxtConfig({
     viewer: true, // Untuk melihat hasil konfigurasi Tailwind di browser
   },
 
-  modules: ['@nuxt/image', '@nuxtjs/sitemap', 'nuxt-delay-hydration', '@nuxt/ui', '@nuxtjs/robots'],
+  modules: ['@nuxt/image', '@nuxtjs/sitemap', 'nuxt-delay-hydration', '@nuxt/ui', '@nuxtjs/robots', 'nuxt-mail'],
   image: {
     domains: ['cdn.jsdelivr.net'],
   },
@@ -121,4 +134,5 @@ export default defineNuxtConfig({
     url: 'http://www.boringan.com/',
     name: 'Raja Boringan sitemap',
   },
+
 });

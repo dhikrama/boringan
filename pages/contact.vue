@@ -7,6 +7,7 @@
 <script setup>
 
 useHead({
+
   title: 'Hubungi Kami - Raja boringan mitra gali',
   meta: [
     {

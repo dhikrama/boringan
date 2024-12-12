@@ -21,6 +21,7 @@
     "nuxt": "^3.14.1592",
     "nuxt-delay-hydration": "^1.3.8",
     "nuxt-gtag": "^3.0.2",
+    "nuxt-mail": "^5.1.1",
     "vue": "latest",
     "vue-router": "latest"
   },
